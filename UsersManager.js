@@ -28,18 +28,18 @@ class UsersManager {
 
 const gestorDeUsuarios = new UsersManager();
 
-userManager.create({
+gestorDeUsuarios.create({
   photo: "ruta_imagen_1",
   email: "usuario1@example.com",
   password: "contraseña1",
   role: "rol1",
 });
 
-userManager.create({
+gestorDeUsuarios.create({
   photo: "ruta_imagen_2",
   email: "usuario2@example.com",
   password: "contraseña2",
   role: "rol2",
 });
 // Ejecución del metodo de lectura
-console.log(userManager.readUsers());
+console.log(gestorDeUsuarios.readUsers());
