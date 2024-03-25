@@ -20,51 +20,54 @@ Antes de comenzar, asegúrate de tener [Node.js](https://nodejs.org/) instalado 
 
 ### Instalación
 
-1. Clona el repositorio en tu máquina local:
-2. Navega al directorio del proyecto:
-3. Instala las dependencias necesarias:
+1. Clona el repositorio en tu máquina local usando `git clone <url-del-repositorio>`.
+2. Navega al directorio del proyecto con `cd CoderHouse_BackEnd`.
+3. Instala las dependencias necesarias con `npm install`.
+4. Inicia el servidor: npm start
 
+El servidor debería estar corriendo y accesible en `http://localhost:3000`.
 
 ## Uso
 
-### Gestión de Productos y Gestión de Usuarios
+Este proyecto ofrece una API para gestionar productos y usuarios. A continuación, se detallan los endpoints disponibles y cómo utilizarlos.
 
-Para agregar un producto al sistema, utiliza el siguiente código como ejemplo:
+### ProductsManager
 
-```javascript
-const gestorDeProductos = new ProductManager();
+La gestión de productos se realiza a través de los siguientes endpoints:
 
-gestorDeProductos.create({
-title: "Nombre del Producto",
-photo: "ruta/a/la/foto.jpg",
-category: "Categoría del Producto",
-price: precio,
-stock: cantidadEnStock,
-});
+- **Crear un Producto**: `POST /api/products`
+- Body ejemplo:
+ ```json
+ {
+   "name": "Cafetera",
+   "price": 2500,
+   "description": "Cafetera automática con molinillo integrado."
+ }
+ ```
+- **Leer Productos**: `GET /api/products`
+- No requiere body.
+- **Actualizar un Producto**: `PUT /api/products/:id`
+- Body ejemplo:
+ ```json
+ {
+   "name": "Cafetera Actualizada",
+   "price": 3000,
+   "description": "Cafetera automática con molinillo y temporizador."
+ }
+ ```
+- **Eliminar un Producto**: `DELETE /api/products/:id`
+- No requiere body.
 
-Para obtener una lista de todos los productos registrados en el sistema:
+### UsersManager
 
-console.log(gestorDeProductos.read());
+_Esta sección está en proceso de creación por Esteban Samaniego y se actualizará próximamente con detalles sobre cómo gestionar usuarios._
 
-A continuación, indicaremos los metodos a utilizar para la clase de UsersManager:
+## Contribuyendo
 
-const gestorDeUsuarios = new UsersManager();
+Si deseas contribuir a este proyecto, por favor haz un fork del repositorio y crea una pull request con tus cambios. Las contribuciones son bienvenidas y apreciadas.
 
-gestorDeUsuarios.create({
-  photo: "ruta_imagen_1",
-  email: "usuario1@example.com",
-  password: "contraseña1",
-  role: "rol1",
-});
 
-gestorDeUsuarios.create({
-  photo: "ruta_imagen_2",
-  email: "usuario2@example.com",
-  password: "contraseña2",
-  role: "rol2",
-});
+## Agradecimientos
 
-Para obtener una lista de todos los usuarios registrados en el sistema:
-
-// Ejecución del metodo de lectura
-console.log(gestorDeUsuarios.readUsers());
+- A CoderHouse por la oportunidad de aprender y desarrollar este proyecto.
+- A todos los que contribuyeron con código, ideas o sugerencias.
